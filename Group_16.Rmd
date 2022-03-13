@@ -73,7 +73,7 @@ data_without_NAs %>%
 
 ```
 
-```{r catigrical data}
+```{r categorical data}
 data_without_NAs=tidyr::unite(data_without_NAs,'country_p',country,province,remove = FALSE)
 data_without_NAs$country <- as.factor(data_without_NAs$country)
 data_without_NAs$above90<-as.factor(data_without_NAs$above90)
@@ -85,7 +85,7 @@ data_without_NAs$country_p<-as.factor(data_without_NAs$country_p)
 data_without_NAs$province<-as.factor(data_without_NAs$province)
 ```
 
-```{r boxplot for country}
+```{r boxplot for price}
 ggplot(data = data_without_NAs, aes(x = above90, y = price, fill = above90)) +
 geom_boxplot() +
 labs(x = "Points", y = "Price") +
